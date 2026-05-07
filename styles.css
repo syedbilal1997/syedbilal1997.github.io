@@ -632,9 +632,15 @@ main {
 .timeline-item {
   position: relative;
   display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 18px;
-  align-items: center;
+  grid-template-columns: 72px minmax(0, 1fr);
+  grid-template-areas:
+    "logo date"
+    "title title"
+    "role role"
+    "place place";
+  column-gap: 18px;
+  row-gap: 10px;
+  align-items: start;
   padding-top: 36px;
 }
 
@@ -652,6 +658,7 @@ main {
 }
 
 .company-logo {
+  grid-area: logo;
   display: grid;
   place-items: center;
   width: 72px;
@@ -680,27 +687,34 @@ main {
 }
 
 .timeline-item .date {
+  grid-area: date;
+  align-self: center;
   color: var(--ms-blue);
   font-size: 13px;
   font-weight: 700;
+  line-height: 1.35;
 }
 
 .timeline-item h3 {
-  margin-top: 8px;
+  grid-area: title;
+  margin-top: 4px;
   font-size: 17px;
+  line-height: 1.25;
 }
 
 .timeline-item p:not(.date) {
-  margin-top: 7px;
+  grid-area: role;
   color: var(--ms-blue-2);
   font-size: 13px;
+  line-height: 1.45;
 }
 
 .timeline-item span {
+  grid-area: place;
   display: block;
-  margin-top: 7px;
   color: var(--muted);
   font-size: 13px;
+  line-height: 1.35;
 }
 
 .projects-section {
