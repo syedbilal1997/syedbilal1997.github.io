@@ -1230,6 +1230,22 @@ main {
   padding: 7px;
 }
 
+/* Product icons: real Microsoft icon image, falling back to the CSS-drawn shape */
+.product-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Hide the CSS shape only while a real icon image is present (it returns via
+   :has if the image is missing and onerror removes it). */
+.product-icon:has(.product-img)::before,
+.product-icon:has(.product-img)::after {
+  display: none;
+}
+
 /* Sector label under each project name */
 .project-card .sector {
   display: block;
