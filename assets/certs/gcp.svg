@@ -1,0 +1,21 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Google Cloud">
+  <defs>
+    <linearGradient id="gcpbg" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4FE3FF" />
+      <stop offset="0.62" stop-color="#0078D4" />
+      <stop offset="1" stop-color="#0A4A8C" />
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#gcpbg)" />
+  <g fill="#ffffff">
+    <circle cx="27.5" cy="28.5" r="8" />
+    <circle cx="39" cy="30.5" r="6.5" />
+    <rect x="19.5" y="30" width="25" height="10" rx="5" />
+  </g>
+  <g>
+    <circle cx="25.5" cy="46" r="2.1" fill="#4285F4" />
+    <circle cx="30.5" cy="46" r="2.1" fill="#EA4335" />
+    <circle cx="35.5" cy="46" r="2.1" fill="#FBBC05" />
+    <circle cx="40.5" cy="46" r="2.1" fill="#34A853" />
+  </g>
+</svg>

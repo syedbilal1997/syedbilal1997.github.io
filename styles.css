@@ -344,6 +344,7 @@ main {
   top: 50%;
   display: grid;
   place-items: center;
+  overflow: hidden;
   width: 210px;
   height: 210px;
   border: 1px solid rgba(255, 255, 255, 0.82);
@@ -358,6 +359,16 @@ main {
   font-weight: 700;
   letter-spacing: -0.08em;
   transform: translate(-50%, -50%);
+}
+
+/* Profile photo fills the orbit centre; falls back to the "SB" monogram if missing. */
+.profile-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
 }
 
 .orbit-chip {
@@ -871,9 +882,21 @@ main {
 
 .cert-grid article {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
   min-height: 92px;
-  padding: 14px 20px;
+  padding: 20px;
   border-left: 1px solid var(--line);
+}
+
+.cert-badge {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  margin-bottom: 12px;
 }
 
 .cert-grid article:first-child {
@@ -1195,4 +1218,170 @@ main {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
+}
+
+/* ===== Brand logos: real logo image with monogram fallback ===== */
+.company-logo,
+.project-logo {
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+  background: #fff;
+  border-radius: inherit;
+}
+
+.project-logo .brand-img {
+  padding: 7px;
+}
+
+/* Product icons: real Microsoft icon image, falling back to the CSS-drawn shape */
+.product-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Hide the CSS shape only while a real icon image is present (it returns via
+   :has if the image is missing and onerror removes it). */
+.product-icon:has(.product-img)::before,
+.product-icon:has(.product-img)::after {
+  display: none;
+}
+
+/* Sector label under each project name */
+.project-card .sector {
+  display: block;
+  margin-top: 3px;
+  color: var(--ms-blue);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ===== Writing / Blog section ===== */
+.writing-section {
+  align-items: start;
+}
+
+.writing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.post-card {
+  display: grid;
+  grid-template-rows: 128px auto;
+  border: 1px solid rgba(218, 230, 242, 0.9);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 36px rgba(25, 49, 79, 0.08);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 120, 212, 0.28);
+  box-shadow: 0 24px 52px rgba(0, 120, 212, 0.14);
+}
+
+.post-cover {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+  background-size: cover;
+  background-position: center;
+  background-color: #0a3a73;
+  background-image: linear-gradient(135deg, #0a2a66, #0078d4 60%, #50e6ff);
+}
+
+.post-cover.has-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(6, 23, 53, 0.55));
+}
+
+.post-cat {
+  position: relative;
+  z-index: 1;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.post-body {
+  padding: 16px 18px 18px;
+}
+
+.post-body h3 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.post-body p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.post-meta {
+  display: flex;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.blog-cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  padding: 22px;
+  border-radius: 18px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 80% 15%, rgba(80, 230, 255, 0.25), transparent 14rem),
+    linear-gradient(135deg, #061d45, #0a4a8c);
+  box-shadow: var(--shadow-soft);
+}
+
+.blog-cta h3 {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.blog-cta p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.blog-cta .btn {
+  align-self: flex-start;
 }
