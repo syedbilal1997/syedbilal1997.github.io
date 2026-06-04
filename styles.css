@@ -114,7 +114,26 @@ svg {
 .brand {
   display: inline-flex;
   align-items: center;
+  gap: 11px;
   justify-self: start;
+}
+
+.brand-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 6px 16px rgba(16, 37, 66, 0.18);
+}
+
+.brand-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  white-space: nowrap;
 }
 
 .brand-mark {
