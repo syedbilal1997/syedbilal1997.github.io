@@ -163,3 +163,63 @@ const year = document.querySelector("#year");
 if (year) {
   year.textContent = new Date().getFullYear();
 }
+
+/* ===== Blog posts (Writing section) =====
+   Hashnode's free GraphQL API was retired (now a paid offering) and the RSS feed
+   sits behind a Cloudflare challenge, so a live client-side feed isn't possible
+   without a paid API key. Posts are therefore curated here: add a new entry to
+   the top of this array when you publish, and the Writing section rebuilds itself.
+   (If you later get a Hashnode API key, this is the single place to swap in a fetch.) */
+const blogConfig = {
+  url: "https://syedbilal365.hashnode.dev",
+  posts: [
+    {
+      title: "How I Structure a PCF Repo for Clean GitHub Releases",
+      brief:
+        "A simple, step-by-step guide to shipping your PCF control as a managed solution zip — from an empty folder to a published release.",
+      url: "https://syedbilal365.hashnode.dev/how-i-structure-a-pcf-repo-for-clean-github-releases",
+      category: "PCF · Power Platform",
+      date: "Jun 2, 2026",
+      readTime: "4 min read",
+      cover: "", // optional cover image URL
+    },
+  ],
+};
+
+(function renderBlog() {
+  const grid = document.querySelector("#writing-grid");
+  if (!grid || !blogConfig.posts.length) return;
+
+  const escape = (str) =>
+    String(str || "").replace(/[&<>"']/g, (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
+    );
+
+  const renderPost = (post) => {
+    const cover = post.cover;
+    const coverClass = cover ? "post-cover has-image" : "post-cover";
+    const coverStyle = cover ? ` style="background-image:url('${encodeURI(cover)}')"` : "";
+    const meta = [post.date, post.readTime]
+      .filter(Boolean)
+      .map((m) => `<span>${escape(m)}</span>`)
+      .join("");
+    return `
+      <a class="post-card" href="${escape(post.url)}" target="_blank" rel="noreferrer">
+        <div class="${coverClass}"${coverStyle}><span class="post-cat">${escape(post.category || "Blog")}</span></div>
+        <div class="post-body">
+          <h3>${escape(post.title)}</h3>
+          <p>${escape(post.brief)}</p>
+          <div class="post-meta">${meta}</div>
+        </div>
+      </a>`;
+  };
+
+  const ctaCard = `
+    <div class="blog-cta">
+      <h3>Bilal on Power Platform</h3>
+      <p>Practical Dynamics 365, PCF, Copilot Studio &amp; Power Platform write-ups from real client delivery.</p>
+      <a class="btn primary" href="${escape(blogConfig.url)}" target="_blank" rel="noreferrer">Visit the blog</a>
+    </div>`;
+
+  grid.innerHTML = blogConfig.posts.slice(0, 3).map(renderPost).join("") + ctaCard;
+})();
