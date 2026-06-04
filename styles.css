@@ -344,6 +344,7 @@ main {
   top: 50%;
   display: grid;
   place-items: center;
+  overflow: hidden;
   width: 210px;
   height: 210px;
   border: 1px solid rgba(255, 255, 255, 0.82);
@@ -358,6 +359,16 @@ main {
   font-weight: 700;
   letter-spacing: -0.08em;
   transform: translate(-50%, -50%);
+}
+
+/* Profile photo fills the orbit centre; falls back to the "SB" monogram if missing. */
+.profile-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
 }
 
 .orbit-chip {
