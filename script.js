@@ -174,14 +174,34 @@ const blogConfig = {
   url: "https://syedbilal365.hashnode.dev",
   posts: [
     {
-      title: "How I Structure a PCF Repo for Clean GitHub Releases",
+      title: "LiquidProgress — a modern visual for model-driven Power Apps",
       brief:
-        "A simple, step-by-step guide to shipping your PCF control as a managed solution zip — from an empty folder to a published release.",
+        "A PCF control that turns plain percentage fields into an animated liquid sphere — with smart due dates, owner avatars, and option-set status colours.",
+      url: "https://syedbilal365.hashnode.dev/liquidprogress-a-modern-visual-for-model-driven-power-apps",
+      category: "PCF · Open Source",
+      date: "Jun 6, 2026",
+      readTime: "6 min read",
+      cover: "https://cdn.hashnode.com/uploads/covers/6a1d06659bd008b40d133823/ddcaa920-efe0-4cab-933f-d4cd202dddae.jpg",
+    },
+    {
+      title: "PCF repo structure for clean GitHub releases (step by step)",
+      brief:
+        "A simple step-by-step guide to structuring a PCF control repo and shipping a managed solution zip to GitHub Releases.",
       url: "https://syedbilal365.hashnode.dev/how-i-structure-a-pcf-repo-for-clean-github-releases",
       category: "PCF · Power Platform",
       date: "Jun 2, 2026",
       readTime: "4 min read",
-      cover: "", // optional cover image URL
+      cover: "https://cdn.hashnode.com/uploads/covers/6a1d06659bd008b40d133823/3de63217-8d7f-48b5-923a-9425149bc3a5.jpg",
+    },
+    {
+      title: "Build your first PCF control: a model-driven field control from scratch",
+      brief:
+        "A complete beginner's guide to building a PCF field control for model-driven Power Apps: set up, scaffold, code, test, and deploy to Dataverse.",
+      url: "https://syedbilal365.hashnode.dev/build-your-first-pcf-control-a-model-driven-field-control-from-scratch",
+      category: "PCF · Tutorial",
+      date: "Jun 1, 2026",
+      readTime: "7 min read",
+      cover: "https://syedbilal365.hashnode.dev/api/og/post?og=eyJhdXRob3IiOiJTeWVkJTIwQmlsYWwlMjBBaG1lZCIsImlzRGVmYXVsdE1vZGVEYXJrIjpmYWxzZSwicmVhZFRpbWUiOjcsImNvbW1lbnRzIjowLCJyZWFjdGlvbnMiOjAsImRvbWFpbiI6InN5ZWRiaWxhbDM2NS5oYXNobm9kZS5kZXYiLCJ0aXRsZSI6IkJ1aWxkJTIwWW91ciUyMEZpcnN0JTIwUENGJTIwQ29udHJvbCUzQSUyMEElMjBNb2RlbC1Ecml2ZW4lMjBGaWVsZCUyMENvbnRyb2wlMjBGcm9tJTIwU2NyYXRjaCIsInBob3RvIjoiaHR0cHM6Ly9hdmF0YXJzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzcwMTM0OTA4P3Y9NCIsImxvZ28iOiJodHRwczovL2Nkbi5oYXNobm9kZS5jb20vcmVzL2hhc2hub2RlL2ltYWdlL3VwbG9hZC92MTU5MzY4MDI4Mjg5Ni9rTkM3RThJUjQucG5nIiwiZmF2aWNvbiI6Imh0dHBzOi8vY2RuLmhhc2hub2RlLmNvbS9yZXMvaGFzaG5vZGUvaW1hZ2UvdXBsb2FkL3YxNTkzNjgwMjgyODk2L2tOQzdFOElSNC5wbmciLCJwdWJsaXNoZWRBdCI6IjIwMjYtMDYtMDFUMDQ6NDg6MjMuODU3WiIsInVwZGF0ZWRBdCI6IjIwMjYtMDYtMDFUMDQ6NDg6MjMuODU3WiJ9",
     },
   ],
 };
