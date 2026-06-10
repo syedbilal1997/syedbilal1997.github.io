@@ -174,6 +174,16 @@ const blogConfig = {
   url: "https://syedbilal365.hashnode.dev",
   posts: [
     {
+      title: "SmartLookup — how I taught a PCF to read your Quick View Forms",
+      brief:
+        "Drop on any Dataverse lookup. Hover. The card auto-pulls fields from the related entity's Quick View Form — zero per-PCF configuration.",
+      url: "https://syedbilal365.hashnode.dev/smartlookup-how-i-taught-a-pcf-to-read-your-quick-view-forms",
+      category: "PCF · Open Source",
+      date: "Jun 9, 2026",
+      readTime: "6 min read",
+      cover: "https://raw.githubusercontent.com/syedbilal1997/SmartLookup-PCF/main/docs/screenshots/hero.png",
+    },
+    {
       title: "LiquidProgress — a modern visual for model-driven Power Apps",
       brief:
         "A PCF control that turns plain percentage fields into an animated liquid sphere — with smart due dates, owner avatars, and option-set status colours.",
