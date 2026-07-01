@@ -174,6 +174,16 @@ const blogConfig = {
   url: "https://syedbilal365.hashnode.dev",
   posts: [
     {
+      title: "Xrm.Copilot — calling the assistant from your model-driven form scripts",
+      brief:
+        "One line of JavaScript. Rich JSON back — markdown, adaptive cards, media, citations. Full working example plus honest limits on where the API fits.",
+      url: "https://syedbilal365.hashnode.dev/xrm-copilot-calling-the-assistant-from-your-model-driven-form-scripts",
+      category: "PCF · Copilot",
+      date: "Jun 29, 2026",
+      readTime: "6 min read",
+      cover: "https://raw.githubusercontent.com/syedbilal1997/SmartLookup-PCF/main/docs/screenshots/hero.png",
+    },
+    {
       title: "SmartLookup — how I taught a PCF to read your Quick View Forms",
       brief:
         "Drop on any Dataverse lookup. Hover. The card auto-pulls fields from the related entity's Quick View Form — zero per-PCF configuration.",
