@@ -174,6 +174,16 @@ const blogConfig = {
   url: "https://syedbilal365.hashnode.dev",
   posts: [
     {
+      title: "How to convert a Code App into a PCF control",
+      brief:
+        "The migration direction most people don't think about. When it makes sense, what carries over cleanly, what you rewrite, and the four gotchas — with real manifest, React mount, and webAPI code.",
+      url: "https://syedbilal365.hashnode.dev/how-to-convert-a-code-app-into-a-pcf-control",
+      category: "PCF · Code Apps",
+      date: "Aug 7, 2026",
+      readTime: "7 min read",
+      cover: "https://raw.githubusercontent.com/syedbilal1997/SmartLookup-PCF/main/docs/screenshots/hero.png",
+    },
+    {
       title: "Xrm.Copilot — calling the assistant from your model-driven form scripts",
       brief:
         "One line of JavaScript. Rich JSON back — markdown, adaptive cards, media, citations. Full working example plus honest limits on where the API fits.",
